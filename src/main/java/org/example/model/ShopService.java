@@ -16,6 +16,10 @@ public class ShopService {
         System.out.println(productRepo.get(id));
     };
 
+    public List<Product> getListOfProducts() {
+        return listOfProducts;
+    }
+
     public void listProducts(){
         System.out.println(this.productRepo.list());
     };
