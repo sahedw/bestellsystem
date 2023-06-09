@@ -5,14 +5,17 @@ import java.util.List;
 import java.util.Map;
 
 public class ProductRepo{
-    Product product1 = new Product("1", "Schere");
-    Product product2 = new Product("2", "Ball");
-    Product product3 = new Product("3", "Maus");
-    Map<String, Product> products = new HashMap<>(Map.of(product1.id, product1, product2.id, product2, product3.id, product3));
+    private Product product1 = new Product("1", "Schere");
+    private Product product2 = new Product("2", "Ball");
+    private Product product3 = new Product("3", "Maus");
+    private final Map<String, Product> products = new HashMap<>();
 
-    /*public ProductRepo(Map<String, String> products){
-        this.products = products;
-    }*/
+
+    public ProductRepo() {
+        products.put(product1.id, product1);
+        products.put(product2.id, product2);
+        products.put(product3.id, product3);
+    }
 
     public Map<String, Product> list(){
         return this.products;

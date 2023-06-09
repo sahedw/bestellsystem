@@ -16,7 +16,6 @@ public class Main {
         // ourShop.listProducts();
 
         ourShop.addToOrder("1");
-        ourShop.addToOrder("2");
 
         ourShop.addOrder();
 
@@ -25,5 +24,7 @@ public class Main {
         ourShop.addOrder();
 
         ourShop.getOrder("1");
+
+        ourShop.listOrders();
     }
 }

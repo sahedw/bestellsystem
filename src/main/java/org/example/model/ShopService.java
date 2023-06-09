@@ -1,18 +1,16 @@
 package org.example.model;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.UUID;
 
 public class ShopService {
 
-    ProductRepo productRepo = new ProductRepo();
-    OrderRepo orderRepo = new OrderRepo();
+    private ProductRepo productRepo = new ProductRepo();
+    private OrderRepo orderRepo = new OrderRepo();
 
+    private List<Product> listOfProducts = new ArrayList<>();
 
-
-    /*public ShopService(ProductRepo productRepo) {
-        this.productRepo = productRepo;
-    }*/
 
     public void getProduct(String id){
         System.out.println(productRepo.get(id));
@@ -22,23 +20,22 @@ public class ShopService {
         System.out.println(this.productRepo.list());
     };
     public void addToOrder(String id){
-        orderRepo.add(productRepo.get(id));
+        listOfProducts.add(productRepo.get(id));
         System.out.println("Your Product has been added to your Order!");
     };
     public void addOrder(){
-        orderRepo.listOfOrders.put(String.valueOf(orderRepo.checkout.id) , orderRepo.checkout.products);
-        System.out.println("List of Orders: " + orderRepo.listOfOrders);
-        orderRepo.checkout.products.clear();
-        orderRepo.checkout.id++;
-
+        Order order = new Order(UUID.randomUUID().toString().substring(0, 4), listOfProducts);
+        orderRepo.add(order);
+        System.out.println(listOfProducts);
+        listOfProducts.clear();
     };
-   public List<Product> getOrder(String orderId){
-       System.out.println("Order found: " + orderRepo.listOfOrders.get(orderId));
-        return orderRepo.listOfOrders.get(orderId);
+   public Order getOrder(String orderId){
+       System.out.println("Order found: " + orderRepo.get(orderId));
+        return orderRepo.get(orderId);
    }
 
     public void listOrders(){
-        System.out.println("List of Orders: " + orderRepo.listOfOrders);
+        System.out.println("List of Orders: " + orderRepo.getAllOrders());
     }
 
 }
