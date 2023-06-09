@@ -1,13 +1,27 @@
 package org.example.model;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class OrderRepo{
 
-/*    public Map<String, Product> list(){};
+    Order checkout = new Order();
 
-    public Order get(String id){
-        return hashMap.get(id);
+    Map<String, List<Product>> listOfOrders = new HashMap<>();
+
+    /*
+    public Map<String, Product> list(){};
+*/
+    public List<Product> get(String id){
+        return listOfOrders.get(id);
     };
 
-    public void add(Order order){
-    };*/
+    public void add(Product orderedProduct){
+        checkout.products.add(orderedProduct);
+        System.out.println("List of Products in Order: " + checkout.products);
+    };
+
+
 }

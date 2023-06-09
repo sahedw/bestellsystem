@@ -10,10 +10,20 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        ShopService test = new ShopService();
-        test.getProduct("3");
+        ShopService ourShop = new ShopService();
+        // ourShop.getProduct("3");
 
-        test.listProducts();
+        // ourShop.listProducts();
 
+        ourShop.addToOrder("1");
+        ourShop.addToOrder("2");
+
+        ourShop.addOrder();
+
+        ourShop.addToOrder("2");
+
+        ourShop.addOrder();
+
+        ourShop.getOrder("1");
     }
 }
