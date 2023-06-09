@@ -4,18 +4,30 @@ import java.util.List;
 
 public class ShopService {
 
- /*   public Product getProduct(){};
+    ProductRepo productRepo = new ProductRepo();
 
-    public String listProducts(){
-        return productList toString;
+
+
+    /*public ShopService(ProductRepo productRepo) {
+        this.productRepo = productRepo;
+    }*/
+
+    public void getProduct(String id){
+        System.out.println(productRepo.get(id));
     };
 
-    public void addOrder(Map<Product>){};
+    public void listProducts(){
+        System.out.println(this.productRepo.list());
+    };
+
+  /*  public void addOrder(Map<Product>){
+
+    };
     public Map<String, Product> getOrder(String orderId){
 
     };
     public Map<String, Order> listOrders(){
 
-    };
-*/
+    };*/
+
 }
