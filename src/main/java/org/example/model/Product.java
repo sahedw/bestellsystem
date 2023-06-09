@@ -8,4 +8,12 @@ public class Product {
 
     public String id;
     public String name;
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
